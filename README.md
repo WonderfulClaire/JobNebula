@@ -1,62 +1,97 @@
 # JobNebula
 
+[![CI](https://github.com/WonderfulClaire/JobNebula/actions/workflows/ci.yml/badge.svg)](https://github.com/WonderfulClaire/JobNebula/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-7c6cff.svg)](LICENSE)
+[![Live demo](https://img.shields.io/badge/Live_demo-open-111225?logo=googlechrome&logoColor=white)](https://jobnebula.cocoa-moth-8728.chatgpt.site)
+
 ![JobNebula social preview](./public/social-card.png)
 
-> Turn scattered opportunities into your career constellation.
+> Turn scattered opportunities into your career constellation. 把散落的机会聚成你的职业星图。
 
-JobNebula is an open-source, personal career-intelligence workspace. It collects opportunities from fragmented sources, normalizes them, ranks them against explicit career signals, and explains every match.
+JobNebula is an open-source, local-first opportunity radar for focused job searches. It turns fragmented listings into an explainable workspace: collect, normalize, rank, review, and move promising roles into an application pipeline.
 
-## The problem
+**[Try the live demo](https://jobnebula.cocoa-moth-8728.chatgpt.site)** · Demo data only, no account required.
 
-Job discovery is scattered across company career pages, recruiting platforms, communities, newsletters, and referrals. Generic feeds optimize for volume; candidates need relevance, provenance, and a workflow they can trust.
+## Why it exists
 
-## Current MVP
+Good roles are scattered across company career pages, recruiting platforms, communities, newsletters, and referrals. Generic feeds optimize for volume; candidates need relevance, provenance, and a workflow they can trust.
 
-- A polished opportunity radar with realistic demo data
-- Search and filters for high-fit, remote, and saved roles
+JobNebula's north star is **explainable relevance**. A fit score is useful only when the user can see the matching signals, gaps, and source behind it.
+
+## Current capabilities
+
+- Opportunity radar with realistic demo data
+- Search plus high-fit, remote, and saved filters
 - Explainable 0–100 fit scores with positive signals and gaps
 - Save, dismiss, and move-to-application actions
 - Manual opportunity capture from any source
-- Local persistence in the browser
-- Responsive interface in Chinese
+- Browser-local persistence
+- Responsive Chinese interface
+
+> The MVP does not crawl external sites or make hiring decisions. It is a product prototype for user-controlled opportunity intelligence.
 
 ## Quick start
 
 Requirements: Node.js 22.13+
 
 ```bash
-npm install
+git clone https://github.com/WonderfulClaire/JobNebula.git
+cd JobNebula
+npm ci
 npm run dev
+```
+
+```bash
+npm run check   # lint, production build, and product-contract tests
 ```
 
 ## Product principles
 
-1. **Provenance first** — keep the original source and posting time attached.
-2. **Explain the score** — show the signals, conflicts, and missing information.
-3. **Human decision** — ranking assists the candidate; it never makes an employment decision.
-4. **Precision over auto-apply** — help people spend attention on opportunities that deserve it.
+1. **Provenance first** — retain the original source and posting context.
+2. **Explain the score** — show signals, conflicts, and missing information.
+3. **Human decision** — ranking assists the candidate; it never decides for them.
+4. **Precision over auto-apply** — protect attention instead of maximizing application volume.
+5. **Permission-aware sources** — prefer official APIs, feeds, user-provided links, and explicitly permitted public sources.
 
 ## Architecture direction
 
-The demo is local-first and intentionally has no crawler backend. The next stage separates the system into source adapters, a normalized opportunity schema, deduplication, an explainable scoring engine, and user-controlled delivery channels.
+```mermaid
+flowchart LR
+  A[Source adapters] --> B[Normalized opportunity schema]
+  B --> C[Deduplication]
+  C --> D[Retrieval + explainable reranking]
+  D --> E[Opportunity radar]
+  E --> F[User-controlled pipeline]
+```
 
-Source adapters should use official APIs, feeds, user-provided links, or explicitly permitted public sources. Unsupported scraping is out of scope.
+The current demo implements the radar and pipeline locally. The next stage introduces explicit source adapters and portable data formats before any background automation. Unsupported scraping and blind auto-apply flows are out of scope.
+
+See [Architecture](docs/ARCHITECTURE.md) for the planned boundaries.
+
+## Responsible use
+
+- Do not use JobNebula to infer protected traits or automate employment decisions.
+- Do not store credentials or sensitive resume data in source adapters.
+- Keep scores explainable and allow users to override every ranking/action.
+- Respect source terms, robots policies, rate limits, and applicable law.
+
+Please report vulnerabilities through [GitHub's private security advisory flow](SECURITY.md).
 
 ## Roadmap
 
 - [ ] Resume and preference onboarding
 - [ ] Extensible source-adapter interface
 - [ ] Duplicate detection across sources
-- [ ] Embedding-based retrieval plus explainable reranking
-- [ ] Daily digest and saved searches
+- [ ] Embedding retrieval plus explainable reranking
+- [ ] Saved searches and daily digest
 - [ ] Application timeline and reminders
 - [ ] Browser extension for user-initiated capture
-- [ ] Export/import in a portable open format
+- [ ] Portable JSON/CSV import and export
 
 ## Contributing
 
-Contributions are welcome, especially source adapters with clear terms, ranking evaluation datasets, accessibility improvements, and internationalization.
+Contributions are welcome, especially source adapters with clear permissions, ranking evaluation fixtures, accessibility improvements, and internationalization. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
 ## License
 
-MIT
+[MIT](LICENSE)

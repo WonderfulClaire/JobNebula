@@ -2,6 +2,23 @@
   "name": "job-nebula",
   "version": "0.1.0",
   "private": true,
+  "description": "An explainable, local-first opportunity radar for focused job searches.",
+  "license": "MIT",
+  "homepage": "https://jobnebula.cocoa-moth-8728.chatgpt.site",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WonderfulClaire/JobNebula.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WonderfulClaire/JobNebula/issues"
+  },
+  "keywords": [
+    "ai-career",
+    "career-intelligence",
+    "job-search",
+    "opportunity-radar",
+    "open-source"
+  ],
   "engines": {
     "node": ">=22.13.0"
   },
@@ -11,10 +28,9 @@
     "start": "vinext start",
     "test": "npm run build && node --test tests/*.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "drizzle-kit generate"
+    "check": "npm run lint && npm test"
   },
   "dependencies": {
-    "drizzle-orm": "0.45.2",
     "next": "16.2.6",
     "react": "19.2.6",
     "react-dom": "19.2.6"
@@ -27,7 +43,6 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.2",
     "@vitejs/plugin-rsc": "0.5.26",
-    "drizzle-kit": "0.31.10",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
     "react-server-dom-webpack": "19.2.6",

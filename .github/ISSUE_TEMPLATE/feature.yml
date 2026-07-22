@@ -1,0 +1,26 @@
+name: Feature or source-adapter request
+description: Propose a product capability or permission-aware opportunity source
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source permissions (if applicable)
+      description: Link official API/feed documentation or describe the user-initiated capture flow.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
