@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "JobNebula — Personal Career Intelligence",
-  description: "Turn scattered job opportunities into a personal, explainable career constellation.",
+  description:
+    "Turn scattered opportunities into a personal, explainable career constellation across three tracks: frontier AI, quantitative finance, and entrepreneurship.",
 };
 
 export default function RootLayout({

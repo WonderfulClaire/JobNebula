@@ -20,11 +20,13 @@ JobNebula's north star is **explainable relevance**. A fit score is useful only 
 
 ## Current capabilities
 
-- Opportunity radar with realistic demo data
-- Search plus high-fit, remote, and saved filters
-- Explainable 0–100 fit scores with positive signals and gaps
+- Three personal career tracks: frontier AI, quantitative finance, and entrepreneurship, each with its own skill profile
+- Opportunity radar covering jobs, internships, graduate programs, accelerators, and competitions
+- Track switcher plus search, high-fit, remote, and saved filters
+- Explainable 0–100 fit scores with positive signals and gaps, scored against the active track
+- Future-empowerment roadmap per track: readiness percentage, milestone states, and next actions
 - Save, dismiss, and move-to-application actions
-- Manual opportunity capture from any source
+- Manual opportunity capture assigned to a track and opportunity type
 - Browser-local persistence
 - Responsive Chinese interface
 
@@ -79,6 +81,9 @@ Please report vulnerabilities through [GitHub's private security advisory flow](
 
 ## Roadmap
 
+- [x] Multi-track profiles (frontier AI / quant finance / startup) with per-track scoring
+- [x] Opportunity kinds beyond jobs: internships, graduate programs, accelerators, competitions
+- [x] Per-track empowerment roadmap with milestone states and next actions
 - [ ] Resume and preference onboarding
 - [ ] Extensible source-adapter interface
 - [ ] Duplicate detection across sources
