@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WonderfulClaire/JobNebula/actions/workflows/ci.yml/badge.svg)](https://github.com/WonderfulClaire/JobNebula/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-7c6cff.svg)](LICENSE)
-[![Live demo](https://img.shields.io/badge/Live_demo-open-111225?logo=googlechrome&logoColor=white)](https://jobnebula.cocoa-moth-8728.chatgpt.site)
+[![local-first](https://img.shields.io/badge/app-local--first-111225?logo=googlechrome&logoColor=white)](https://github.com/WonderfulClaire/JobNebula#quick-start)
 
 ![JobNebula social preview](./public/social-card.png)
 
@@ -10,7 +10,7 @@
 
 JobNebula is an open-source, local-first opportunity radar for focused job searches. It turns fragmented listings into an explainable workspace: collect, normalize, rank, review, and move promising roles into an application pipeline.
 
-**[Try the live demo](https://jobnebula.cocoa-moth-8728.chatgpt.site)** · Demo data only, no account required.
+**Run it locally** (see Quick start) — JobNebula is a local-first app with browser-local persistence, so there is no hosted demo to sign in to; just clone and `npm run dev`.
 
 ## Why it exists
 
