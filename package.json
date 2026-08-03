@@ -4,7 +4,7 @@
   "private": true,
   "description": "An explainable, local-first opportunity radar for focused job searches.",
   "license": "MIT",
-  "homepage": "https://jobnebula.cocoa-moth-8728.chatgpt.site",
+  "homepage": "https://github.com/WonderfulClaire/JobNebula",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WonderfulClaire/JobNebula.git"
